@@ -7,13 +7,13 @@ services:
     build: .
     # restart: always
     volumes:
-      - "./python:/data/python"
+      - "./data/python:/data/python"
 
   mongo:
     container_name: mongo
     image: mongo
     restart: always
     volumes:
-      - "./mongo/data:/data/db"
+      - "./data/mongo/data:/data/db"
     ports:
       - 27017:27017
