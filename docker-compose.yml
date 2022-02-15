@@ -1,0 +1,19 @@
+version: "3.1"
+
+services:
+  python:
+    container_name: python
+    # image: python:3.9-slim-buster
+    build: .
+    # restart: always
+    volumes:
+      - "./python:/data/python"
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    volumes:
+      - "./mongo/data:/data/db"
+    ports:
+      - 27017:27017
